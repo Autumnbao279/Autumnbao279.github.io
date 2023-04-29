@@ -8,7 +8,7 @@
     <title>{{ .Title }}</title>
     <link rel="icon" type="image/png" href="/favicon.ico">
     {{ $style := resources.Get "style.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     {{ $built := resources.Get "main.js" | js.Build "main.js" }}
     <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
     <!-- <script type="module" src="/main.js"></script> -->
