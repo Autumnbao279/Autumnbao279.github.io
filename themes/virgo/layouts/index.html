@@ -8,9 +8,9 @@
             {{if .active}}
             <div class="item">
                 <!-- ⚓🐶🎉👀💡👓🐌 -->
-                <a href={{.path}}>
+                <a href="{{ .path | relURL }}">
                     {{.icon}} 
-                    {{if .Site.Params.en }}{{.en}}
+                    {{if .Site.Params.en}}{{.en}}
                     {{ else }}{{.zh}}
                     {{ end }}
                 </a>
@@ -21,32 +21,32 @@
             <!-- 默认 Menu -->
             <div class="item">
                 <!-- ⚓🐶🎉👀💡👓🐌 -->
-                <a href="/nav">🎯 {{if .Site.Params.en }}Nav{{ else }}导航{{ end }}</a>
+               <a href="{{ "/nav" | relURL }}">🎯 {{if .Site.Params.en }}Nav{{ else }}导航{{ end }}</a>
             </div>
 
             <div class="item">
-                <a href={{.Site.Params.menu.search.path}}>🔎 {{if .Site.Params.en }}Search{{ else }}搜索{{ end }}</a>
+                <a href="{{ .Site.Params.menu.search.path | relURL }}">🔎 {{if .Site.Params.en }}Search{{ else }}搜索{{ end }}</a>
             </div>
 
             {{ range where .Site.Pages "Kind" "section" }}
             {{ if ne .Title "Secrets" }}
                 <div class="item">
-                    <a href="{{.Permalink}}">📜 {{if .Site.Params.en }}{{.Title}}{{ else }}文章{{ end }}</a>
+                    <a href="{{.Permalink|relURL}}">📜 {{if .Site.Params.en }}{{.Title}}{{ else }}文章{{ end }}</a>
                 </div>
             {{ end }}
             {{ end }}
 
             <div class="item">
-                <a href="/archive">🎉 {{if .Site.Params.en }}Archive{{ else }}归档{{ end }}</a>
+                <a href="{{"/archive"|relURL }}">🎉 {{if .Site.Params.en }}Archive{{ else }}归档{{ end }}</a>
             </div>
 
             <div class="item">
-                <a href="/posts/wiki">🚀 {{if .Site.Params.en }}Wiki{{ else }}百科{{ end }}</a>
+                <a href="{{"/posts/wiki"| relURL }}">🚀 {{if .Site.Params.en }}Wiki{{ else }}百科{{ end }}</a>
             </div>
 
             {{ if .Site.Params.menu.about }}
             <div class="item">
-                <a href="/about">🐌 {{if .Site.Params.en }}About{{ else }}关于{{ end }}</a>
+                <a href="{{ "/about" | relURL }}">🐌 {{if .Site.Params.en }}About{{ else }}关于{{ end }}</a>
             </div>
             {{ end }}
         {{end}}
