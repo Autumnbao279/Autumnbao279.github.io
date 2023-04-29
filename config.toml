@@ -29,18 +29,18 @@ enableGitInfo = true
             icon = '🎯'
         [params.menu.11]
             active = true
-            path = '/content/posts'
+            path = 'content/posts'
             en = 'Posts'
             zh = 'Posts'
             icon = '📜'
         [params.menu.33]
             active = true
-            path = '/content/archive'
+            path = 'content/archive'
             zh = 'Archive'
             icon = '🎉'
         [params.menu.44]
             active = true
-            path = '/content/about'
+            path = 'content/about'
             en = 'About'
             zh = 'About'
             icon = '🐌' 
